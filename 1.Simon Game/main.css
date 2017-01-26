@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|VT323|Oswald');
+body {
+    background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png");
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+main {
+    width: 600px;
+    height: 600px;
+    background-color: #333;
+    border-radius: 50%;
+    margin: 80px auto;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.center {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    position: absolute;
+    top: 130px;
+    left: 130px;
+    border-radius: 50%;
+    border: 20px #333 solid;
+}
+
+.green {
+    width: 260px;
+    height: 260px;
+    background-color: #00a74a;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border-top-left-radius: 100%;
+}
+
+.red {
+    width: 260px;
+    height: 260px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    border-top-right-radius: 100%;
+    background-color: #9f0f17;
+}
+
+.yellow {
+    width: 260px;
+    height: 260px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    border-bottom-left-radius: 100%;
+    background-color: #cca707;
+}
+
+.blue {
+    width: 260px;
+    height: 260px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    border-bottom-right-radius: 100%;
+    background-color: #094a8f;
+}
+
+.center {
+    font-family: "Oswald", Arial, sans;
+    font-size: 35px;
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    font-family: "Alfa Slab One", cursive;
+}
+
+span {
+    font-size: 0.3em;
+    position: relative;
+    bottom: 20px;
+}
+
+.count {
+    width: 60px;
+    height: 75px;
+    position: absolute;
+    bottom: 90px;
+    left: 25px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+h2 {
+    margin: 0 0 10px;
+    background: #32050C;
+    line-height: 48px;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    border: 5px #333 solid;
+    color: #430710;
+    font-size: 30px;
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    border: 5px #333 solid;
+    border-radius: 50%;
+    outline: none;
+    position: relative;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    top: -2px;
+}
+
+.start {
+    height: 80px;
+    width: 60px;
+    position: absolute;
+    left: 120px;
+    bottom: 90px;
+}
+
+.strict {
+    height: 80px;
+    width: 60px;
+    position: absolute;
+    left: 220px;
+    bottom: 90px;
+}
+
+.pilot-lamp {
+    width: 8px;
+    height: 8px;
+    background: #430710;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px #333 solid;
+    left: 23px;
+    bottom: 72px;
+}
+
+.start button {
+    background: #FC0102;
+    margin-bottom: 23px;
+}
+
+.strict button {
+    background: #ffff00;
+    margin-bottom: 22px;
+}
+
+.power {
+    position: absolute;
+    top: 245px;
+    left: 100px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.off-text {
+    float: left;
+}
+
+.on-text {
+    float: right;
+}
+
+.power>div {
+    width: 20px;
+    height: 24px;
+    display: inline-block;
+    background: #222;
+    margin-bottom: 3px;
+    border-radius: 3px;
+    padding: 1px 20px 0 1px;
+}
+
+.power>div>div {
+    background: #3193DE;
+    width: 18px;
+    height: 22px;
+    border-radius: 4px;
+}
+
+.power .on {
+    padding: 1px 1px 0 20px;
+}
+
+.pilot-lamp.light {
+    background: #dc0d29;
+}
+
+.count .light {
+    color: #dc0d29;
+}
+
+.yellow.light {
+    background-color: #fed93f;
+}
+
+.blue.light {
+    background-color: #1c8cff;
+}
+
+.red.light {
+    background-color: #ff4c4c;
+}
+
+.green.light {
+    background-color: #13ff7c;
+}
+
+.clickable {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.unclickable {
+    pointer-events: none;
+}

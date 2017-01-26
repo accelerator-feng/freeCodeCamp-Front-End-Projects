@@ -1,0 +1,70 @@
+body {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.screen {
+    width: 90%;
+    height: 400px;
+    margin: 20px auto 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mask {
+    border: 1px solid #ddd;
+    height: 99%;
+}
+
+input {
+    display: inline-block;
+}
+
+.pre_content {
+    margin: 0 auto;
+    display: block;
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 3px;
+    color: #000;
+}
+
+.button input {
+    text-align: center;
+    border-radius: 3px;
+    background: #fff;
+    padding: 5px 70px;
+    margin: 6px 10px 0;
+}
+
+input::-moz-placeholder {
+    color: #A9A9A9;
+}
+
+:-ms-input-placeholder {
+    color: #A9A9A9;
+}
+
+.button {
+    text-align: center;
+    
+}
+
+.send {
+    border: 1px solid rgb(230, 80, 0);
+    color: rgb(230, 80, 0);
+}
+
+.reset {
+    border: 1px solid #aaa;
+    color: #000;
+    position: relative;
+    right: 4px;
+}
+
+.text {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+}

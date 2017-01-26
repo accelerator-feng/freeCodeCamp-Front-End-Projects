@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+* {
+    vertical-align: baseline;
+}
+
+div {
+    position: relative;
+    z-index: 2;
+}
+
+body {
+    background-color: #333;
+    color: #333; 
+      
+}
+
+.container {
+    border-radius: 3px;
+    position: relative;
+    margin: 8% auto auto auto;
+    width: 450px;
+    padding: 40px 50px;
+    display: table;
+    background-color: #fff;
+}
+
+.text {
+    text-align: center;
+    width: 450px;
+    height: auto;
+    font-weight: 500;
+    font-size: 1.75em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    
+}
+.author {
+  line-height: 2em;
+    font-size: 0.6em;
+    float: right;
+}
+
+.buttons {
+    width: 450px;
+    margin: auto;
+    display: block;
+    overflow: hidden;
+}
+
+.button {
+    height: 38px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #333;
+    outline: none;
+    font-size: 0.85em;
+    padding: 8px 18px 6px 18px;
+    margin-top: 30px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+i{position: relative;
+left: 11px;
+bottom: 1px;}
+.tweet-quote {
+    float: left;
+    padding: 0px;
+    padding-top: 8px;
+    font-size: 1.2em;
+    margin-right: 5px;
+    height: 30px;
+    width: 40px;
+}
+
+.new-quote {
+    float: right;
+    font-family: 'Microsoft YaHei';
+}

@@ -1,0 +1,58 @@
+body {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+main {
+    width: 455px;
+    height: 450px;
+    background: #000;
+    margin: 60px auto;
+    padding: 5px 0 0 6px;
+}
+
+main button {
+    margin: 5px;
+    width: 140px;
+    height: 138px;
+    float: left;
+    font-size: 80px;
+    font-family: "Microsoft YaHei", Arial;
+}
+
+.mask {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(30, 30, 30, 0.6);
+}
+
+.select {
+    width: 600px;
+    height: 250px;
+    background: #000;
+    padding: 10px;
+    margin: 130px auto;
+    border-radius: 20px;
+    color: #fff;
+}
+
+div input {
+    float: left;
+    margin-top: 30px;
+    margin-left: 30%;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    font-family: "Microsoft YaHei", Arial;
+}
+
+p {
+    text-align: center;
+    width: 300px;
+    margin: 20px auto 40px;
+    line-height: 40px;
+}

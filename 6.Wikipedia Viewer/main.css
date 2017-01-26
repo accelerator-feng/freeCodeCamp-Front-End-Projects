@@ -1,0 +1,104 @@
+body {
+    background-color: #2ca6cb;
+    font-size: 1.5em;
+    font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+}
+
+form {
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#random {
+    color: #fff;
+}
+
+ul {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul a:hover {
+    text-decoration: underline;
+}
+
+h3 {
+    font-size: 0.7em;
+    margin-bottom: 0.5em;
+}
+
+span {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    color: #fff;
+}
+
+input {
+    width: 15em;
+    height: 2em;
+    border-radius: 0.5em;
+    border: none;
+    padding: 0.5em 1em;
+    transition: width 0.5s;
+    outline: none;
+    font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+    font-size: 0.5em;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.3);
+    background-color: #eee;
+}
+
+input:focus {
+    background-color: #fff;
+}
+
+form {
+    margin-top: 1em;
+}
+
+p {
+    font-size: 0.5em;
+    float: left;
+    width: 90%;
+    margin-top: 0.3em;
+}
+
+button {
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.3);
+    background-color: #2ca6cb;
+    border-radius: 0.2em;
+    position: relative;
+    top: 0.17em;
+    border-right: none;
+    border-bottom: none;
+    font-family: Helvetica, Tahoma, Arial, sans-serif;
+    color: #fff;
+}
+
+img {
+    float: left;
+    margin-right: 0.5em;
+}
+
+li {
+    height: 3.6em;
+    background-color: #fff;
+    list-style: none;
+    border-radius: 0.2em;
+    box-shadow: 6px 6px 2px rgba(0, 0, 0, 0.3);
+    padding: 0.6em 0.6em;
+    width: 80%;
+    margin: 0.8em auto;
+}
+
+li:hover {
+    background-color: #eee;
+}

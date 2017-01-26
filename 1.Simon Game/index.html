@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simon Game</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="green" id="0"></div>
+            <div class="red" id="1"></div>
+            <div class="yellow" id="2"></div>
+            <div class="blue" id="3"></div>
+        </section>
+        <div class="center">
+            <h1>simon<span>®</span></h1>
+            <div class="count">
+                <h2>- -</h2>
+                <h3>COUNT</h3></div>
+            <div class="start">
+                <button type="button" id="start"></button>
+                <h3>START</h3></div>
+            <div class="strict">
+                <div class="pilot-lamp"></div>
+                <button type="button" class="shadow" id="strict"></button>
+                <h3>STRICT</h3></div>
+            <div class="power">
+                <h3 class="off-text">OFF</h3>
+                <div id="switch">
+                    <div></div>
+                </div>
+                <h3 class="on-text">ON</h3></div>
+        </div>
+    </main>
+    <audio src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
+    <audio src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
+    <audio src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
+    <audio src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
+    <script src="jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700|Droid+Serif:400,400italic);
+.container {
+    width: 800px;
+    margin: 30px auto;
+    background-color: #5c5457;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px #fff solid;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    color: #eee;
+    padding-left: 88px;
+    padding-top: 6px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+a{text-decoration: none;color: #b8cca6;}
+a:hover{text-decoration: underline;}
+li {
+    background-color: #4a5e82;
+    width: 100%;
+    height: 60px;
+    padding: 25px 0;
+    border-bottom: 2px #fff solid;
+    list-style: none;
+    color: #b8cca6;
+    display: none;
+}
+
+footer {
+    width: 100%;
+    height: 15px;
+}
+
+img {
+    display: block;
+    border-radius: 50%;
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    margin: 0 40px;
+    border: 3px #fff solid;
+}
+
+h3 {
+    text-align: center;
+    position: relative;
+    right: 205px;
+    bottom: 105px;
+    line-height: 110px;
+    font-size: 20px;
+}
+
+p {
+    font-style: italic;
+    position: relative;
+    left: 280px;
+    bottom: 191px;
+    font-size: 14px;
+    text-align: center;
+    width: 60%;
+    font-family: 'Droid Serif', serif;
+}
+
+header>i {
+    height: 20px;
+    width: 15px;
+    color: #5c5457;
+    background-color: #eee;
+    position: absolute;
+    right: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: right;
+    padding-right: 10px;
+    transition: width 0.4s;
+}
+
+header>i:hover {
+    width: 70px;
+    transition: width 0.4s;
+}
+
+.icon {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    float: left;
+    border: 1px #5c5457 solid;
+    margin: 3px 5px;
+}
+
+.allIcon {
+    background-color: #5c5457;
+    border-radius: 50%;
+}
+
+.onIcon {
+    background-color: #b8cca6;
+    border-radius: 50%;
+}
+
+.offIcon {
+    background-color: #8ea7c2;
+    border-radius: 50%;
+}
+
+.all {
+    top: 15px;
+    width: 70px;
+}
+
+.offline {
+    top: 66px;
+}
+
+.online {
+    top: 40px;
+}
+
+.onlineUser {
+    background-color: #b8cca6;
+    color: #5c5457;
+}

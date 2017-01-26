@@ -1,0 +1,105 @@
+@font-face {
+    font-family: "Befolk Script";
+    src: url('Befolk Script.ttf') format('truetype'), url('Befolk Script.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: Helvetica, Tahoma, Arial, STXihei, "Microsoft YaHei", SimSun, Heiti, sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Befolk Script";
+    font-size: 5em;
+}
+
+header {
+    text-align: center;
+    font-size: 0.8em;
+    width: 310px;
+    height: 70px;
+    margin: 0 auto 0;
+}
+
+header div {
+    width: 130px;
+    float: left;
+}
+
+.session {
+    position: relative;
+    margin-left: 45px;
+    bottom: 2px;
+}
+
+i {
+    line-height: 1em;
+    display: inline-block;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.length {
+    font-size: 0.8em;
+}
+
+.number {
+    display: inline-block;
+    font-size: 2.5em;
+    margin: 20px;
+}
+
+.clock {
+    width: 310px;
+    height: 310px;
+    margin: 80px auto 0;
+    border: 5px #9c0 solid;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+h2 {
+    font-size: 3em;
+    font-weight: 100;
+    margin: 55px 0 50px;
+    color: #fff;
+}
+
+.time {
+    margin-top: 1em;
+    font-size: 3.5em;
+    color: #fff;
+}
+
+.clock:before {
+    width: 304px;
+    height: 304px;
+    content: '';
+    border: 5px solid #333;
+    border-radius: 50%;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, -1px);
+}
+
+.background {
+    width: 310px;
+    content: '';
+    background-color: #9c0;
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    z-index: -1;
+    transform: translate(50%, 0%);
+}

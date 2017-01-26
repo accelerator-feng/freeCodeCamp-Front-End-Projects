@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    background: #02323e;
+    width: 600px;
+    height: 900px;
+    margin: 0 auto;
+    color: #fff;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: "Microsoft YaHei", 微软雅黑, Arial, Helvetica, sans-serif, "宋体";
+}
+
+header {
+    position: relative;
+    background: #000f16;
+    height: 26.5%
+}
+
+input {
+    padding: 20px;
+    position: absolute;
+    bottom: 10px;
+    font-size: 100px;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    width: 100%;
+    color: #fff;
+    text-align: right;
+    outline: none;
+}
+
+main {
+    font-size: 0;
+}
+
+main div {
+    width: 25%;
+    height: 132.3px;
+    display: inline-block;
+    text-align: center;
+    line-height: 132.3px;
+    font-size: 50px;
+    border: #344d59 1px solid;
+    cursor: pointer;
+}
+
+.equal {
+    height: 265px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    line-height: 265px;
+}
+
+.zero {
+    width: 50%;
+}
+=======
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    background: #02323e;
+    width: 600px;
+    height: 900px;
+    margin: 0 auto;
+    color: #fff;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: "Microsoft YaHei", 微软雅黑, Arial, Helvetica, sans-serif, "宋体";
+}
+
+header {
+    position: relative;
+    background: #000f16;
+    height: 26.5%
+}
+
+input {
+    padding: 20px;
+    position: absolute;
+    bottom: 10px;
+    font-size: 100px;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    width: 100%;
+    color: #fff;
+    text-align: right;
+    outline: none;
+}
+
+main {
+    font-size: 0;
+}
+
+main div {
+    width: 25%;
+    height: 132.3px;
+    display: inline-block;
+    text-align: center;
+    line-height: 132.3px;
+    font-size: 50px;
+    border: #344d59 1px solid;
+    cursor: pointer;
+}
+
+.equal {
+    height: 265px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    line-height: 265px;
+}
+
+.zero {
+    width: 50%;
+}
+

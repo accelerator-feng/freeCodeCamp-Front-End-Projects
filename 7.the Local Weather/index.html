@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>本地天气</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <div class="container  clearfloat">
+        <h1>本地天气查询</h1>
+        <dl class="clearfloat left">
+            <div>
+                <dt>所在城市：</dt>
+                <dd class="city"></dd>
+            </div>
+            <div>
+                <dt>当前温度：</dt>
+                <dd class="temp"></dd>
+            </div>
+            <div>
+                <dt>当前风向：</dt>
+                <dd class="wind_direction"></dd>
+            </div>
+            <div>
+                <dt>当前风力：</dt>
+                <dd class="wind_strengt"></dd>
+            </div>
+            <div>
+                <dt>当前湿度：</dt>
+                <dd class="humidity"></dd>
+            </div>
+            <div>
+                <dt>更新时间：</dt>
+                <dd class="time"></dd>
+            </div>
+        </dl>
+        <dl class="clearfloat right">
+            <div>
+                <dt>今日温度：</dt>
+                <dd class="temperature"></dd>
+            </div>
+            <div>
+                <dt>风向风力：</dt>
+                <dd class="wind"></dd>
+            </div>
+            <div>
+                <dt>今日天气：</dt>
+                <dd class="weather"></dd>
+            </div>
+            <div>
+                <dt>穿衣指数：</dt>
+                <dd class="dressing_index"></dd>
+            </div>
+            <div>
+                <dt>紫外线强度：</dt>
+                <dd class="uv_index"></dd>
+            </div>
+            <div>
+                <dt>日期：</dt>
+                <dd class="date_y"></dd>
+            </div>
+        </dl>
+    </div>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=kKC3PPnZc3Fq7xlwGyZfkCuYnGBrGuAL"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
