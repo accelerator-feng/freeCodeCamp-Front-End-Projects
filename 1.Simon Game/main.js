@@ -12,39 +12,6 @@ $(function() {
         orderCount = 0, // 亮灯计数
         lightCount = 0, // count区闪烁计数
         roundCount = 1; // 回合计数
-    $(".center").click(function(e) {
-        var tg = e.target;
-        // 游戏开关
-        if (tg.id == "switch") {
-            $(tg).toggleClass("on");
-            $count.toggleClass("light");
-            if (!$switch.attr("class")) {
-                location.reload();
-            }
-        }
-        if ($switch.attr("class")) {
-            // strict模式
-            if (tg.id == "strict") {
-                $(".pilot-lamp").toggleClass("light");
-                strict = 1;
-            }
-            // 游戏开始/重置
-            else if (tg.id == "start") {
-                order = [];
-                clickCount = 0;
-                orderCount = 0;
-                lightCount = 0;
-                roundCount = 1;
-                $colorBlock.removeClass("light");
-                clearInterval(roundTimer);
-                clearInterval(lightTimer);
-                $section.removeClass("unclickable clickable").unbind();
-                getOrder();
-                $count.text("- -");
-                lightTimer = setInterval(light, 250);
-            }
-        }
-    });
     //    生成亮灯顺序数组
     function getOrder() {
         for (var i = 0; i < 20; i++) {
@@ -71,7 +38,7 @@ $(function() {
             $audio.unbind();
             clearInterval(roundTimer);
             orderCount = 0;
-            playerClick();
+            $section.removeClass('unclickable').addClass("clickable");
             return;
         }
         $colorBlock.eq(index).addClass('light');
@@ -82,36 +49,68 @@ $(function() {
         };
         orderCount++;
     }
-
-    function playerClick() {
-        $section.removeClass('unclickable').addClass("clickable").mousedown(function(e) {
-            var id = e.target.id;
-            $(e.target).addClass('light');
-            if (id == order[clickCount]) {
-                //  玩家点击正确
-                $audio[id].play();
-                clickCount++;
-                if (clickCount == roundCount) {
-                    //  玩家胜利
-                    if(roundCount==20){alert("YOU WIN");location.reload();}
-                    //  玩家点完一轮
-                    clickCount = 0;
-                    roundCount++;
-                    if (roundCount > 9) { $count.text(roundCount); } else { $count.text("0" + roundCount); }
-                    roundTimer = setInterval(round, 1500);
-                }
-            } else {
-                //  玩家点击错误
-                $count.text("! !");
-                $audio[3].play(); //  可替换成警告音效
-                lightTimer = setInterval(light, 250);
-                clickCount = 0;
-                if (strict) { roundCount = 1; }
+    $(".center").click(function(e) {
+        var tg = e.target;
+        // 游戏开关
+        if (tg.id == "switch") {
+            $(tg).toggleClass("on");
+            $count.toggleClass("light");
+            if (!$switch.attr("class")) {
+                location.reload();
             }
-        }).mouseup(function(e) {
-            $(e.target).removeClass('light');
-            // 玩家点完一轮且松开鼠标，禁用点击，解除事件绑定
-            if (!clickCount) { $section.addClass("unclickable").unbind(); }
-        });
-    }
+        }
+        if ($switch.attr("class")) {
+            // strict模式
+            if (tg.id == "strict") {
+                $(".pilot-lamp").toggleClass("light");
+                strict = 1;
+            }
+            // 游戏开始/重置
+            else if (tg.id == "start") {
+                order = [];
+                clickCount = 0;
+                orderCount = 0;
+                lightCount = 0;
+                roundCount = 1;
+                $colorBlock.removeClass("light");
+                clearInterval(roundTimer);
+                clearInterval(lightTimer);
+                getOrder();
+                $count.text("- -");
+                lightTimer = setInterval(light, 250);
+            }
+        }
+    });
+    $section.mousedown(function(e) {
+        var id = e.target.id;
+        $(e.target).addClass('light');
+        if (id == order[clickCount]) {
+            //  玩家点击正确
+            $audio[id].play();
+            clickCount++;
+            if (clickCount == roundCount) {
+                //  玩家胜利
+                if (roundCount == 20) {
+                    alert("YOU WIN");
+                    location.reload();
+                }
+                //  玩家点完一轮
+                clickCount = 0;
+                roundCount++;
+                if (roundCount > 9) { $count.text(roundCount); } else { $count.text("0" + roundCount); }
+                roundTimer = setInterval(round, 1500);
+            }
+        } else {
+            //  玩家点击错误
+            $count.text("! !");
+            $audio[3].play(); //  可替换成警告音效
+            lightTimer = setInterval(light, 250);
+            clickCount = 0;
+            if (strict) { roundCount = 1; }
+        }
+    }).mouseup(function(e) {
+        $(e.target).removeClass('light');
+        // 玩家点完一轮且松开鼠标，禁用点击
+        if (!clickCount) { $section.addClass("unclickable"); }
+    });
 });
