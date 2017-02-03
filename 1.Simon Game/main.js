@@ -4,50 +4,57 @@ $(function() {
         $section = $("section"),
         $colorBlock = $section.find("div"),
         $audio = $("audio"),
-        lightTimer = null,
-        roundTimer = null,
         strict = 0, // strict模式指示
         order = [], // 亮灯顺序数组  
+        Timer=null,
         clickCount = 0, // 点击计数
-        orderCount = 0, // 亮灯计数
-        lightCount = 0, // count区闪烁计数
         roundCount = 1; // 回合计数
     //    生成亮灯顺序数组
     function getOrder() {
+        var lightOrder = [];
         for (var i = 0; i < 20; i++) {
             var num = Math.round(Math.random() * 3);
-            order.push(num);
+            lightOrder.push(num);
         }
+        return lightOrder;
     }
     // count区闪烁，闪烁完后正式开始游戏
-    function light() {
-        lightCount++;
-        $count.toggleClass('light');
-        if (lightCount == 4) {
-            clearInterval(lightTimer);
-            lightCount = 0;
-            if (roundCount > 9) { $count.text(roundCount); } else { $count.text("0" + roundCount); }
-            roundTimer = setInterval(round, 1500);
-        }
+    function lightTimer() {
+        var lightCount = 0,
+            light = function() {
+                lightCount++;
+                $count.toggleClass('light');
+                if (lightCount == 4) {
+                    clearInterval(Timer);
+                    if (roundCount > 9) { $count.text(roundCount); } else { $count.text("0" + roundCount); }
+                    roundTimer();
+                }
+            },
+            Timer = setInterval(light, 250);
     }
     //  每回合顺序亮灯
-    function round() {
-        var index = order[orderCount];
-        if (orderCount == roundCount) {
-            //  亮灯完毕,玩家可以开始操作
-            $audio.unbind();
-            clearInterval(roundTimer);
-            orderCount = 0;
-            $section.removeClass('unclickable').addClass("clickable");
-            return;
-        }
-        $colorBlock.eq(index).addClass('light');
-        $audio[index].play();
-        $audio[index].onended = function() {
-            $colorBlock.removeClass("light");
-            $audio[index].onended = null;
-        };
-        orderCount++;
+    function roundTimer() {
+        var orderCount = 0,
+            round = function() {
+                var index = order[orderCount],
+                    audio = $audio[index];
+                if (orderCount == roundCount) {
+                    //  亮灯完毕,玩家可以开始操作
+                    $audio.unbind();
+                    clearInterval(Timer);
+                    orderCount = 0;
+                    $section.removeClass('unclickable').addClass("clickable");
+                    return;
+                }
+                $colorBlock.eq(index).addClass('light');
+                audio.play();
+                audio.onended = function() {
+                    $colorBlock.removeClass("light");
+                    audio.onended = null;
+                };
+                orderCount++;
+            },
+            Timer = setInterval(round, 1500);
     }
     $(".center").click(function(e) {
         var tg = e.target;
@@ -67,17 +74,13 @@ $(function() {
             }
             // 游戏开始/重置
             else if (tg.id == "start") {
-                order = [];
                 clickCount = 0;
-                orderCount = 0;
-                lightCount = 0;
                 roundCount = 1;
                 $colorBlock.removeClass("light");
-                clearInterval(roundTimer);
-                clearInterval(lightTimer);
-                getOrder();
+                clearInterval(Timer);
+                order = getOrder();
                 $count.text("- -");
-                lightTimer = setInterval(light, 250);
+                lightTimer();
             }
         }
     });
@@ -98,15 +101,15 @@ $(function() {
                 clickCount = 0;
                 roundCount++;
                 if (roundCount > 9) { $count.text(roundCount); } else { $count.text("0" + roundCount); }
-                roundTimer = setInterval(round, 1500);
+                roundTimer();
             }
         } else {
             //  玩家点击错误
             $count.text("! !");
             $audio[3].play(); //  可替换成警告音效
-            lightTimer = setInterval(light, 250);
             clickCount = 0;
             if (strict) { roundCount = 1; }
+            lightTimer();
         }
     }).mouseup(function(e) {
         $(e.target).removeClass('light');
