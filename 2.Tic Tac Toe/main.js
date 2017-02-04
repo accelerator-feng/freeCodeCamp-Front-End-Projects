@@ -78,7 +78,7 @@ $(function() {
                         aiClick(2);
                         break;
                     default:
-                        aiClick(8);
+                        aiClick(8); 
                         break;
                 }
             }
@@ -108,15 +108,18 @@ $(function() {
                 }
             } else if (aiSteps === 1) {
                 if (parseInt(box(0)) + parseInt(box(2)) + parseInt(box(6)) + parseInt(box(8)) == 2) { aiClick(1); } 
-                else if (box(2) + box(3) == "-1-1" || box(1) + box(6) == "-1-1" || box(1) + box(3) == "-1-1") { aiClick(0); } 
-                else if (box(0) + box(5) == "-1-1" || box(1) + box(8) == "-1-1" || box(1) + box(5) == "-1-1") { aiClick(2); } 
-                else if (box(0) + box(7) == "-1-1" || box(3) + box(8) == "-1-1" || box(3) + box(7) == "-1-1") { aiClick(6); } 
-                else if (box(5) + box(7) == "-1-1" || box(5) + box(6) == "-1-1" || box(2) + box(7) == "-1-1") { aiClick(8); } 
-                else if (box(0) + box(8) == "-1-1" || box(2) + box(6) == "-1-1") { aiClick(1); } 
+                else if (twoBox(2, 3) || twoBox(1, 6) || twoBox(1, 3)) { aiClick(0); } 
+                else if (twoBox(0, 5) || twoBox(1, 8) || twoBox(1, 5)) { aiClick(2); } 
+                else if (twoBox(0, 7) || twoBox(3, 8) || twoBox(3, 7)) { aiClick(6); } 
+                else if (twoBox(5, 7) || twoBox(5, 6) || twoBox(2, 7)) { aiClick(8); } 
+                else if (twoBox(0, 8) || twoBox(2, 6)) { aiClick(1); } 
                 else { aiClick(2); }
             } else if (aiSteps === 2 || aiSteps === 3) { randomStep(); }
         }
     }
+
+    function twoBox(num1, num2) {
+        return box(num1) + box(num2) == "-1-1"; }
 
     function concatBox(arr) {
         return box(arr[0]) + box(arr[1]) + box(arr[2]);
@@ -152,15 +155,14 @@ $(function() {
     btn.removeAttr("disabled");
     $("div input").click(function() {
         PLAYER = $(this).attr("value");
-        AI = PLAYER === "X" ? "O" : "X";
         $(".mask").hide();
-        if (AI === "X") {
+        if (PLAYER === "O") {
+            AI = "X";
             aiClick(0);
             aiSteps++;
-        }
+        } else { AI = "O"; }
     });
-
-    $("main button").click(function() {
+    btn.click(function() {
         $(this).text(PLAYER).prop({ "disabled": "disabled", "value": "-1", }).css("color", "#000");
         checkSituation();
         aiRound();
