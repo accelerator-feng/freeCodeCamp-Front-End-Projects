@@ -9,8 +9,8 @@ $(function() {
             roundTimer: null,
             flickerTimer: null,
             reset: function() {
-                this.clickCount = 0; // 点击次数
-                this.roundCount = 1; // COUNT计数
+                this.click = 0; // 点击次数
+                this.count = 1; // COUNT计数
                 this.order = getOrder(); // 亮灯顺序
                 clearInterval(this.roundTimer);
                 clearInterval(this.flickerTimer);
@@ -36,46 +36,46 @@ $(function() {
             else if (tg.id == 'start') {
                 $colorBlock.removeClass('light');
                 game.reset();
-                $count.text('- -');
-                flicker();
+                refreshCount('- -');
             }
         }
     });
     $section.mousedown(function(e) {
         var tg = e.target;
         $(tg).addClass('light');
-        if (tg.id == game.order[game.clickCount]) {
+        if (tg.id == game.order[game.click]) {
             //  玩家点击正确
             $audio[tg.id].play();
-            game.clickCount++;
-            if (game.clickCount == game.roundCount) {
+            game.click++;
+            if (game.click == game.count) {
                 //  玩家胜利
-                if (game.roundCount == 20) {
+                if (game.count == 20) {
                     alert('YOU WIN');
                     location.reload();
                 }
                 //  玩家点完一轮
-                game.clickCount = 0;
-                game.roundCount++;
+                game.click = 0;
+                game.count++;
                 refreshCount();
+                roundStart();
             }
         } else {
             //  玩家点击错误
-            $count.text('! !');
             $audio[3].play(); //  可替换成警告音效
-            game.clickCount = 0;
-            if (game.strict) { game.roundCount = 1; }
-            flicker();
+            game.click = 0;
+            if (game.strict) { game.count = 1; }
+            refreshCount('! !');
         }
     }).mouseup(function(e) {
         $(e.target).removeClass('light');
         // 玩家点完一轮且松开鼠标，禁用点击
-        if (!game.clickCount) { $section.addClass('unclickable'); }
+        if (!game.click) { $section.addClass('unclickable'); }
     });
     //  生成亮灯顺序数组
     function getOrder() {
-        var lightOrder = [];
-        for (var i = 0; i < 20; i++) {
+        var lightOrder = [],
+            i = 0;
+        for (; i < 20; i++) {
             var num = Math.round(Math.random() * 3);
             lightOrder.push(num);
         }
@@ -91,14 +91,16 @@ $(function() {
             if (lightCount == 4) {
                 clearInterval(game.flickerTimer);
                 refreshCount();
+                roundStart();
             }
         }
         game.flickerTimer = setInterval(light, 250);
     }
     //  更新COUNT
-    function refreshCount() {
-        if (game.roundCount > 9) { $count.text(game.roundCount); } else { $count.text('0' + game.roundCount); }
-        roundStart();
+    function refreshCount(content) {
+        if (content) { $count.text(content); flicker(); } 
+        else if (game.count > 9) { $count.text(game.count); } 
+        else { $count.text('0' + game.count); }
     }
     //  每回合顺序亮灯
     function roundStart() {
@@ -107,7 +109,7 @@ $(function() {
         function round() {
             var index = game.order[orderCount],
                 audio = $audio[index];
-            if (orderCount == game.roundCount) {
+            if (orderCount == game.count) {
                 //  亮灯完毕,玩家可以开始操作
                 clearInterval(game.roundTimer);
                 orderCount = 0;
