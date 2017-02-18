@@ -1,5 +1,8 @@
 # freeCodeCamp-Front-End-Projects
 ## FCC前端demo合集
+
+大部分代码是初学时写的，编码规范有所欠缺，仅供参考
+
 - [Simon Game](http://yinfengblog.com/Simon-Game/)
 - [Tic Tac Toe](http://yinfengblog.com/Tic-Tac-Toe/)
 - [Pomodoro Clock](http://yinfengblog.com/a-Pomodoro-Clock/)
