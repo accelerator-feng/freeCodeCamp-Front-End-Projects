@@ -1,5 +1,5 @@
 # freeCodeCamp-Front-End-Projects
-## FCC前端demo合集
+## FCC前端项目合集
 
 
 - [Simon Game](http://yinfengblog.com/Simon-Game/)
